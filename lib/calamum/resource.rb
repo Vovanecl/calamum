@@ -3,7 +3,7 @@
 # So anywhere in view template we can use this object.
 class Calamum::Resource
   attr_accessor :uri, :action, :headers,
-    :auth, :params, :errors, :description, :request, :response, :tryit
+    :auth, :request_params, :response_params, :errors, :description, :request, :response, :tryit
 
   # Initialize object from attributes.
   #
@@ -13,7 +13,8 @@ class Calamum::Resource
     @action = attrs['action'].upcase
     @headers = attrs['headers'] || {}
     @auth = !attrs['authentication']
-    @params = attrs['params'] || {}
+    @request_params = attrs['request_params'] || {}
+    @response_params = attrs['response_params'] || {}
     @errors = attrs['errors'] || {}
     @description = attrs['description']
     @request = attrs['request']
@@ -43,6 +44,8 @@ class Calamum::Resource
       'label-warning'
     when 'DELETE'
       'label-important'
+    when 'PATCH'
+      'label-success'
     end
   end
 
