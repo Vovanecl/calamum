@@ -26,6 +26,10 @@ class Calamum::DocParser
     @definition['authentication']
   end
 
+   def get_push_notifications
+    @definition['push_notifications']
+  end
+
   def get_description
     @definition['description']
   end

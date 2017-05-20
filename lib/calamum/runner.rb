@@ -71,6 +71,7 @@ class Calamum::Runner
       process_pages
       process_section("overview",  @definition.get_description)
       process_section("authentication", @definition.get_authentication)
+      process_section("push_notifications", @definition.get_push_notifications)
       process_errors
     end
   rescue => ex
