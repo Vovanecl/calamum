@@ -19,7 +19,6 @@ class Calamum::Resource
     @description = attrs['description']
     @request = attrs['request']
     @response = attrs['response']
-    @tryit = attrs['tryit']
   end
 
   # Returns a unique, but readable name for this resource suitable for use as a filename

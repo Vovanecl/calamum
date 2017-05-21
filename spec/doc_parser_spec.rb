@@ -14,8 +14,11 @@ def test_user_resource_content
   its(:action) { should == "GET" }
   its(:headers) { should == { "content_type"=> "application/json" } }
   its(:auth) { should == false }
-  its(:params) { should ==
-    {"page"=>{"type"=> "integer", "description"=> "Page to show", "required"=> true} }
+  its(:request_params) { should ==
+    {"page"=>{"type"=> "integer", "description"=> "Page to show", "required"=> true}} }
+  }
+  its(:response_params) { should ==
+    {"page"=>{"type"=> "integer", "description"=> "Page to show" "object_params" => {"type" => "integer", "description" => "ewe"} }
   }
   its(:description) { should == "Retrieve all the registered users." }
   its(:response) { should ==

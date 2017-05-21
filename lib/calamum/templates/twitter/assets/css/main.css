@@ -582,27 +582,36 @@ ul.vertical-tabs-list li {
     cursor: pointer;
 }
 
-.parameter {
+.parameter, .sub-parameter {
     border-bottom: 1px solid #EEE;
     padding: 8px 0;
 }
-.parameter:first-child {
+.parameter:first-child, .parameter .sub-parameter:first-of-type {
     border-top: 1px solid #EEE;
 }
-.parameter:last-child {
+.parameter:last-child, .sub-parameter:last-child {
     border-bottom: 0;
 }
 .parameter:hover {
     background-color: #F8F8F8;
 }
-.parameter .param {
+.parameter .param, .sub-parameter .sub-param {
     display: block;
     float: left;
+}
+.parameter .param, .sub-parameter .sub-param {
     width: 220px;
     color: #333;
     font-weight: bold;
 }
-.parameter .param span {
+.sub-parameter {
+    width: 69%;
+    margin-left: 31%;
+}
+.sub-param {
+    margin-left: 0 !important;
+}
+.parameter .param span, .sub-parameter .sub-param span {
     display: block;
     color: #999;
     font-weight: normal;

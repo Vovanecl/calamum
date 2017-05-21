@@ -82,8 +82,19 @@
                     <span>type: <%= content['type'] %></span>
                   </span>
                   <p><%= content['description'] %></p>
-                </div>
+                  <% if content['object_params'] %>
+                    <% content['object_params'].each do |key, content| %>
+                      <div class="sub-parameter">
+                        <span class="sub-param"><%= key %>
+                          <span>type: <%= content['type'] %></span>
+                        </span>
+                        <p><%= content['description'] %></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  </div>
               <% end %>
+
             </div>
           </div>
   <% end %>
@@ -130,6 +141,6 @@
       </div>
 
     </div>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </body>
 </html>
